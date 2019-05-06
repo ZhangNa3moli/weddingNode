@@ -45,8 +45,16 @@ app.use(cookieParser());
 app.set('view engine', 'html');
 //模板文件放在哪
 app.set('views', path.join(__dirname, 'views'));
+// app.use(express.static(path.join(__dirname, 'public')));
 //哪种模板引擎
 app.engine('html',consolidate.ejs);
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 app.use(logger('dev'));

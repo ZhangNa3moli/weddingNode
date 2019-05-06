@@ -15,10 +15,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var registerRouter = require('./routes/user/register');
 var loginRouter = require('./routes/user/login');
-var imguserRouter = require('./routes/user/imguser');
 var appointRouter = require('./routes/user/appoint');
 var articlelistRouter = require('./routes/user/articlelist');
 var showlistRouter = require('./routes/user/showlist');
+var judgelistRouter = require('./routes/user/judgelist');
+var publishjudgeRouter = require('./routes/user/publishjudge');
 
 var app = express();
 
@@ -58,10 +59,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/register',registerRouter);
 app.use('/login',loginRouter);
-app.use('/imguser',imguserRouter);
 app.use('/appoint',appointRouter);
 app.use('/articlelist',articlelistRouter);
 app.use('/showlist',showlistRouter);
+app.use('/judgelist',judgelistRouter);
+app.use('./publishjudge',publishjudgeRouter);
 
 
 // catch 404 and forward to error handler

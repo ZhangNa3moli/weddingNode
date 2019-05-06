@@ -2,9 +2,9 @@ module.exports =
  { 
      name:'wedding', 
      mysql: {   
-              host: '127.0.0.1',     
+              host: 'localhost',     
               user: 'root',   
-              password: 'root',  
+              password: 'admin',  
               database:'wedding'// 前面建的user表位于这个数据库中  
       },
     //   User:function User(user){

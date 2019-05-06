@@ -32,9 +32,9 @@ pool.getConnection(function(err, connection) {
     AdminR.prototype.save = function save(admin,callback) {
         pool.getConnection(function (err, connection) {
 
-            var insertUser_Sql = "INSERT INTO web_user(nickname,password,phone) VALUES(?,?,?)";
+            var insertUser_Sql = "INSERT INTO web_user(pic,nickname,password,phone) VALUES(?,?,?,?)";
 
-            connection.query(insertUser_Sql, [admin.nickname,admin.password,admin.phone], function (err, result) {
+            connection.query(insertUser_Sql, [admin.pic,admin.nickname,admin.password,admin.phone], function (err, result) {
 
                 connection.release();
                 if (err) {

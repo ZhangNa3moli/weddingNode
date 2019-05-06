@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var dbConfig = require('../../db/DBConfig');
-var userSQL = require('../../db/usersql');
+// var userSQL = require('../../db/usersql');
 var AdminR = require('../../db/user-recruit');
 
 router.get('/', function(req, res){

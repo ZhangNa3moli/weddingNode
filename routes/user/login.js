@@ -37,8 +37,12 @@ router.get('/', function(req, res){
             //获取用户信息
             AdminR.getUserByUserName(newUser.nickname,function(err,results){
               if(newUser.password === results[0].password){
-                res.send('登录成功');
+                var data = {}
+                data.message = '登录成功'
+                data.data = results[0]
+                res.send(data);
                 console.log('登录成功');
+                console.log();
               }
               else{
                 res.send('密码错误');

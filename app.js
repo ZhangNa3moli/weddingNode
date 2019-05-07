@@ -22,6 +22,8 @@ var showlistRouter = require('./routes/user/showlist');
 var judgelistRouter = require('./routes/user/judgelist');
 var publishjudgeRouter = require('./routes/user/publishjudge');
 
+var fileuploadRouter = require('./routes/user/fileupload');
+
 var app = express();
 
 //1.获取请求数据
@@ -74,6 +76,7 @@ app.use('/articlelistdetail', articlelistdetailRouter);
 app.use('/showlist',showlistRouter);
 app.use('/judgelist',judgelistRouter);
 app.use('./publishjudge',publishjudgeRouter);
+app.use('/fileupload', fileuploadRouter);
 
 
 // catch 404 and forward to error handler

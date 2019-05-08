@@ -21,9 +21,9 @@ var articlelistdetailRouter = require('./routes/user/articlelistDetail');
 var showlistRouter = require('./routes/user/showlist');
 var judgelistRouter = require('./routes/user/judgelist');
 var publishjudgeRouter = require('./routes/user/publishjudge');
+var showdetailRouter = require('./routes/user/showDetail');
 
 var fileuploadRouter = require('./routes/user/fileupload');
-// var fileuploadRouter = require('./routes/user/fileupload');
 
 var app = express();
 
@@ -78,6 +78,7 @@ app.use('/showlist',showlistRouter);
 app.use('/judgelist',judgelistRouter);
 app.use('/publishjudge',publishjudgeRouter);
 app.use('/fileupload', fileuploadRouter);
+app.use('/showdetail', showdetailRouter);
 
 
 // catch 404 and forward to error handler

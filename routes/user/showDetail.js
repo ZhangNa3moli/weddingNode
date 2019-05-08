@@ -14,12 +14,14 @@ router.post('/', function (req, res, next) {
     
     pool.getConnection(function (err, connection) {
         var artical_sql = `select * from show_detail where viceid like '${req.body.id}__' order by id asc`;
-        connection.query(artical_sql, function (err, result) {
-            if (result) {
+        var artical_sql1 = `select * from article_center where articleid = '1'`;
+        connection.query(`${artical_sql};${artical_sql1}`, function (err, result) {
+            if (!err) {
                 let data = {}
                 data.responseMessage = "ok"
                 data.responseCode = '000000'
-                data.data = result
+                data.data = result[0]
+                data.time = result[1][0].publishtime
                 console.log(result);
                 res.send(data);
             }else{

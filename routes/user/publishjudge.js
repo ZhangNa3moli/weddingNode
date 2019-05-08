@@ -12,9 +12,9 @@ router.post('/', function(req, res) {
     var nickname=req.body.nickname;
     var judgetime= req.body.judgetime;
     var pic = req.body.pic; 
-    var judgecontent = req.query.content;     
+  var judgecontent = req.body.content;     
    
- 
+  console.log(req.body)
     var newFeedback = new FeedbackR({
       nickname: nickname,
       judgetime:judgetime,

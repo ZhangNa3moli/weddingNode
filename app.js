@@ -23,6 +23,7 @@ var judgelistRouter = require('./routes/user/judgelist');
 var publishjudgeRouter = require('./routes/user/publishjudge');
 
 var fileuploadRouter = require('./routes/user/fileupload');
+// var fileuploadRouter = require('./routes/user/fileupload');
 
 var app = express();
 
@@ -75,7 +76,7 @@ app.use('/articlelist',articlelistRouter);
 app.use('/articlelistdetail', articlelistdetailRouter);
 app.use('/showlist',showlistRouter);
 app.use('/judgelist',judgelistRouter);
-app.use('./publishjudge',publishjudgeRouter);
+app.use('/publishjudge',publishjudgeRouter);
 app.use('/fileupload', fileuploadRouter);
 
 
